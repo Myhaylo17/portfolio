@@ -8,9 +8,7 @@ from typing import List
 
 app = FastAPI(title="Myhaylo Koltun Portfolio")
 
-# -------------------------
-# Middleware
-# -------------------------
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,15 +17,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -------------------------
-# Static & Templates setup
-# -------------------------
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-# -------------------------
-# Models
-# -------------------------
+
 class Skill(BaseModel):
     name: str
     level: str
@@ -44,9 +38,7 @@ class ContactInfo(BaseModel):
     github: str
     linkedin: str
 
-# -------------------------
-# Data
-# -------------------------
+
 PROFILE = {
     "name": "Myhaylo Koltun",
     "title": "Python Developer",
@@ -111,9 +103,7 @@ EDUCATION = {
     "status": "Current Student"
 }
 
-# -------------------------
-# API Endpoints
-# -------------------------
+
 @app.get("/api/profile")
 async def get_profile():
     return PROFILE
@@ -149,9 +139,6 @@ async def get_all_data():
         "education": EDUCATION
     }
 
-# -------------------------
-# HTML Home Page
-# -------------------------
 @app.get("/", response_class=HTMLResponse)
 async def portfolio_page(request: Request):
     context = {"request": request, "profile": PROFILE}
