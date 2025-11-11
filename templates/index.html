@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myhaylo Koltun - Python Developer Portfolio</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="loading" class="loading">⚡ Завантаження портфоліо...</div>
+        <div id="content" style="display: none;">
+            <header>
+                <div class="header-content">
+                    <div class="profile-photo-container">
+                        <div class="profile-photo-wrapper">
+                            <!-- Фото або емоджі-заглушка -->
+                            <img src="static/my_photo.jpg" alt="Myhaylo Koltun" class="profile-photo">
+
+                        </div>
+                    </div>
+                    <div class="header-text">
+                        <h1 id="name"></h1>
+                        <div class="title" id="title"></div>
+                        <p class="bio" id="bio"></p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="section">
+                <h2>🎓 Education</h2>
+                <div class="education-box" id="education"></div>
+            </div>
+
+            <div class="section">
+                <h2>💻 Tech Skills</h2>
+                <div class="skills-grid" id="hard-skills"></div>
+            </div>
+
+            <div class="section">
+                <h2>🌟 Soft Skills</h2>
+                <div class="soft-skills" id="soft-skills"></div>
+            </div>
+
+            <div class="section">
+                <h2>🚀 Projects</h2>
+                <div id="projects"></div>
+            </div>
+
+            <div class="section">
+                <h2>📬 Contacts</h2>
+                <div class="contact-info" id="contact"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Myhaylo Koltun</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
